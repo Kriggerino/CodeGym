@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm thi Đại học khối D</title>
+</head>
+<body>
+    <h1>Tính điểm thi Đại học khối D</h1>
+    <form>
+        <label for="scoreToan">Điểm môn Toán:</label>
+        <input type="number" id="scoreToan" min="0" max="10" step="0.1">
+        <br>
+        <label for="scoreVan">Điểm môn Văn:</label>
+        <input type="number" id="scoreVan" min="0" max="10" step="0.1">
+        <br>
+        <label for="scoreAnh">Điểm môn Anh:</label>
+        <input type="number" id="scoreAnh" min="0" max="10" step="0.1">
+        <br>
+        <label for="khuVuc">Khu vực:</label>
+        <select id="khuVuc">
+            <option value="KV1">KV1</option>
+            <option value="KV2-NT">KV2-NT</option>
+            <option value="KV2">KV2</option>
+            <option value="KV3">KV3</option>
+        </select>
+        <br>
+        <button onclick="calculateScore()">Tính điểm</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateScore() {
+            // Lấy điểm từng môn và khu vực từ người dùng
+            var scoreToan = parseFloat(document.getElementById("scoreToan").value);
+            var scoreVan = parseFloat(document.getElementById("scoreVan").value);
+            var scoreAnh = parseFloat(document.getElementById("scoreAnh").value);
+            var khuVuc = document.getElementById("khuVuc").value;
+
+            // Tính điểm tổng dựa trên công thức
+            var diemTong = scoreToan + scoreVan + scoreAnh;
+
+            // Tính điểm khu vực và cộng vào điểm tổng
+            switch (khuVuc) {
+                case "KV1":
+                    diemTong += 0.75;
+                    break;
+                case "KV2-NT":
+                    diemTong += 0.5;
+                    break;
+                case "KV2":
+                    diemTong += 0.25;
+                    break;
+                case "KV3":
+                    // Không cộng điểm cho KV3
+                    break;
+            }
+
+            // Hiển thị kết quả
+            document.getElementById("result").innerHTML = "Tổng điểm: " + diemTong.toFixed(2);
+        }
+    </script>
+</body>
+</html>

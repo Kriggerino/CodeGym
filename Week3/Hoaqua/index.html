@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Giá hoa quả</h1>
+    <input type="text" id="a">
+    <button onclick="gia()">Xem giá</button>
+    <h3 id="b"></h3>
+    <script>
+        function gia() {
+            let qua = document.getElementById('a').value;
+            let gia = '';
+            if(qua == "ổi" || qua == "dưa hấu") {
+                gia = "20000 VND/kg";
+            }
+            if(qua == "táo" || qua == "xoài") {
+                gia = "30000 VND/kg";
+            }
+            if(qua == "cam" || qua == "chôm chôm") {
+                gia = "40000 VND/kg";
+            }
+            if(qua == "măng cụt") {
+                gia = "50000 VND/kg";
+            }
+            document.getElementById('b').innerHTML = gia;
+        }
+    </script>
+</body>
+</html>
