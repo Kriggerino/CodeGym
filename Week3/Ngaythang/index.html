@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a">
+    <button onclick="tinh()">Tinh so ngay</button>
+    <h3 id="b"></h3>
+    <script>
+        function tinh() {
+            let thang = +document.getElementById('a').value;
+            let ngay = '';
+            if(thang == 1) {
+                ngay = "co 31 ngay";
+            }
+                if(thang == 2) {
+                ngay = "co 28 ngay hoac 29 ngay";
+            }
+            if(thang == 3) {
+                ngay = "co 31 ngay";
+            }
+            if(thang == 4) {
+                ngay = "co 30 ngay";
+            }
+            if(thang == 5) {
+                ngay = "co 31 ngay";
+            }
+            if(thang == 6) {
+                ngay = "co 30 ngay";
+            }
+            if(thang == 7) {
+                ngay = "co 31 ngay";
+            }
+            if(thang == 8) {
+                ngay = "co 31 ngay";
+            }
+            if(thang == 9) {
+                ngay = "co 30 ngay";
+            }
+            if(thang == 10) {
+                ngay = "co 31 ngay";
+            }
+            if(thang == 11) {
+                ngay = "co 30 ngay";
+            }
+            if(thang == 12) {
+                ngay = "co 31 ngay";
+            }
+            document.getElementById('b').innerHTML = ngay;
+        }
+    </script>
+</body>
+</html>
