@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="amount">
+      <h3>Amount</h3>
+      <input
+        type="text"
+        name="amount"
+        id="amount"
+        style="width: 200px; height: 30px"
+      />
+    </div>
+    <div class="from">
+      <h3>From Currency</h3>
+      <select name="from" id="from" style="width: 200px; height: 30px">
+        <option name="from">VND</option>
+        <option name="from">USD</option>
+        <option name="from">EUR</option>
+      </select>
+    </div>
+    <div class="to">
+      <h3>To Currency</h3>
+      <select name="to" id="to" style="width: 200px; height: 30px">
+        <option name="to">VND</option>
+        <option name="to">USD</option>
+        <option name="to">EUR</option>
+      </select>
+    </div>
+    <div class="Convert">
+      <br />
+      <button
+        onclick="print()"
+        style="
+          width: 100px;
+          height: 30px;
+          color: white;
+          background-color: violet;
+        "
+      >
+        Convert
+      </button>
+    </div>
+    <p id="money"></p>
+    <script>
+      function print() {
+        let amount = document.getElementById("amount").value;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        if (from == "VND" && to == "VND") {
+          document.getElementById("money").innerHTML =
+            "Result: " + amount + " VND";
+        }
+        if (from == "VND" && to == "USD") {
+          document.getElementById("money").innerHTML =
+            "Result: " + amount * 0.000041 + " USD";
+        }
+        if (from == "VND" && to == "EUR") {
+          document.getElementById("money").innerHTML =
+            "Result: " + amount * 0.000039 + " EUR";
+        }
+        if (from == "USD" && to == "USD") {
+          document.getElementById("money").innerHTML =
+            "Result: " + amount + " USD";
+        }
+        if (from == "USD" && to == "VND") {
+          document.getElementById("money").innerHTML =
+            "Result: " + amount * 24400 + " VND";
+        }
+        if (from == "USD" && to == "EUR") {
+          document.getElementById("money").innerHTML =
+            "Result: " + amount * 0.95 + " EUR";
+        }
+        if (from == "EUR" && to == "EUR") {
+          document.getElementById("money").innerHTML =
+            "Result: " + amount + " EUR";
+        }
+        if (from == "EUR" && to == "VND") {
+          document.getElementById("money").innerHTML =
+            "Result: " + amount * 25696 + " VND";
+        }
+        if (from == "EUR" && to == "USD") {
+          document.getElementById("money").innerHTML =
+            "Result: " + amount * 1.05 + " USD";
+        }
+      }
+    </script>
+  </body>
+</html>
